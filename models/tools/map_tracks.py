@@ -7,7 +7,7 @@ def mag_mse_loss(sep, ref):
     sep: (Nsep, samples)
     ref: (samples)
   Returns:
-    chosen_sep: (1, samples)
+    chosen_sep: (samples)
   """
   ref = np.reshape(ref, [1, -1])
   idx = np.argmin(np.sum((np.abs(np.fft.rfft(sep)) - np.abs(np.fft.rfft(ref)))**2, axis=-1))
